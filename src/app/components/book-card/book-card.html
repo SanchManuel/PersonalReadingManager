@@ -1,0 +1,16 @@
+<article class="book-card">
+    <div class="book-cover-image">
+        <img [src]="book().coverImage" [alt]="book().title" />
+    </div>
+    <div class="book-details">
+        <h3>{{ book().title }}</h3>
+        <p>Author: {{ book().author }}</p>
+        <p>ISBN: {{ book().isbn }}</p>
+        <p>Genre: {{ book().genreOrCategory }}</p>
+        <p [class]="'book-status-'+book().readingStatus.toLowerCase().replaceAll(' ', '-')">Status: {{ book().readingStatus }}</p>
+        <p>Rating: {{ book().personalRating }}</p>
+    </div>
+    <div class="button-status">
+      <button type="button" (click)="onUpdateStatus()">Update Status</button>
+    </div>
+</article>

@@ -1,0 +1,10 @@
+<label for="search" class="form-label">
+  <span class="form-label-text">Search Books:</span>
+  <input
+  id="search"
+  class="form-input" t
+  type="Enter book title or author"
+  [value]="searchQuery()"
+  (input)="searchQuery.set($any($event.target).value)"
+  />
+</label>

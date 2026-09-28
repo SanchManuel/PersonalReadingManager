@@ -1,0 +1,27 @@
+<section class="book-list-container">
+    <h2 class="book-list-title">Book List</h2>
+    <div class="book-search-container">
+        <app-book-search
+        [(searchQuery)]="searchQuery"
+        />
+    </div>
+
+    @if(filteredBooks().length > 0) {
+        <p class="book-count-message">Found {{ filteredBooks().length }} book(s).</p>
+    } @else {
+        <p class="book-count-message">No books found.</p>
+    }
+
+    <div class="book-list">
+        @for (book of filteredBooks(); track book.id) {
+            <app-book-card
+            [book]="book"
+            (updateStatus)="updateBookStatus($event)">
+            </app-book-card>
+        }
+        @empty {
+          <p class="no-books-message">No books found.</p>
+        }
+    </div>
+
+</section>
