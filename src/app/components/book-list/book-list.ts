@@ -196,7 +196,7 @@ private getNextStatus(currentStatus: ReadingStatus): ReadingStatus {
 }
 
 protected readonly filteredBooks = computed(() => {
-  const searchQuery = this.searchQuery().toLowerCase();
+  const searchQuery = this.searchQuery().trim().toLowerCase();
   return this.books().filter((book) => {
     return (
       book.title.toLowerCase().includes(searchQuery) ||

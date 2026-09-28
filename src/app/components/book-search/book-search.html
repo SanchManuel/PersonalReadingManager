@@ -2,8 +2,9 @@
   <span class="form-label-text">Search Books:</span>
   <input
   id="search"
-  class="form-input" t
-  type="Enter book title or author"
+  class="form-input"
+  type="search"
+  placeholder="Enter book title or author"
   [value]="searchQuery()"
   (input)="searchQuery.set($any($event.target).value)"
   />
