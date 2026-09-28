@@ -3,6 +3,7 @@
   align-items: center;
   width: 100%;
   max-width: 32rem;
+  box-sizing: border-box;
   padding: 0.35rem 0.75rem;
   margin-bottom: 1rem;
 
@@ -28,12 +29,14 @@
 }
 
 .form-label-text {
+  flex-shrink: 0;
   margin-right: 0.75rem;
   color: #6b7280;
   font-size: 1.2rem;
 }
 
 .form-input {
+  min-width: 0;
   width: 100%;
   padding: 0.65rem 0;
   border: none;
@@ -42,6 +45,22 @@
   color: #111827;
   background-color: transparent;
   font-size: 1rem;
+}
+
+.form-input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+@media (max-width: 30rem) {
+  .form-label {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-label-text {
+    margin: 0 0 0.25rem;
+    font-size: 0.9rem;
+  }
 }
 
 .form-input::placeholder {

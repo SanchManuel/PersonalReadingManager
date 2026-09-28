@@ -1,11 +1,13 @@
 <label for="search" class="form-label">
   <span class="form-label-text">Search Books:</span>
   <input
-  id="search"
-  class="form-input"
-  type="search"
-  placeholder="Enter book title or author"
-  [value]="searchQuery()"
-  (input)="searchQuery.set($any($event.target).value)"
+    #searchInput
+    id="search"
+    class="form-input"
+    type="search"
+    placeholder="Enter book title or author"
+    autocomplete="off"
+    [value]="searchQuery()"
+    (input)="searchQuery.set(searchInput.value)"
   />
 </label>

@@ -1,35 +1,51 @@
-.book-list-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+.book-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(75rem, 90%);
+  margin: 20px auto 0;
 }
-.book-list-title{
-    margin-bottom: 10px;
+
+.book-list-title {
+  margin-bottom: 10px;
 }
 .book-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+app-book-card {
+  display: block;
 }
 
 .book-search-container {
-    margin-bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .no-books-message {
-    font-size: 1.2rem;
-    color: #6b7280;
-    text-align: center;
-    margin-top: 20px;
+  font-size: 1.2rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 20px;
 }
 .book-count-message {
-    font-size: 1rem;
-    color: #6b7280;
-    text-align: center;
-    margin-top: 10px;
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 36rem) {
+  .book-list-container {
+    width: min(100% - 2rem, 75rem);
+  }
+
+  .book-list {
+    grid-template-columns: 1fr;
+  }
 }
